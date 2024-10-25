@@ -6,7 +6,7 @@
 #    By: ego <ego@student.42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/21 21:47:23 by ego               #+#    #+#              #
-#    Updated: 2024/10/21 22:19:17 by ego              ###   ########.fr        #
+#    Updated: 2024/10/25 16:24:36 by ego              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ all		:	$(NAME)
 
 $(NAME)	:	header
 			echo "Compiling get_next_line..."
-			$(CC) $(CLFAGS) -D BUFFER_SIZE=$(BSIZE) $(CFILES) main.c -I $(IDIR) -o $(NAME)
+			$(CC) $(CLFAGS) -D BUFFER_SIZE=$(BSIZE) main.c $(SRCS) -I $(IDIR) -o $(NAME)
 			echo "$(GREEN)[OK] get_next_line is ready!$(RESET)"
 
 norm	:

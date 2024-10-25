@@ -6,7 +6,7 @@
 /*   By: ego <ego@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 21:50:37 by ego               #+#    #+#             */
-/*   Updated: 2024/10/21 23:31:40 by ego              ###   ########.fr       */
+/*   Updated: 2024/10/25 19:15:15 by ego              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,41 +26,86 @@ int	ft_char_in_str(char c, char *s)
 	return (0);
 }
 
+char	*ft_strdup(const char *s)
+{
+	char	*dup;
+	size_t	i;
+
+	if (!s)
+		return (ft_strdup(""));
+	i = 0;
+	while (s[i])
+		i++;
+	dup = (char *)ft_calloc(i + 1, sizeof(char));
+	if (!dup)
+		return (NULL);
+	i = 0;
+	while (s[i])
+	{
+		dup[i] = s[i];
+		i++;
+	}
+	dup[i] = '\0';
+	return (dup);
+}
+
+char	*ft_strndup(const char *s, size_t n)
+{
+	char	*ndup;
+	size_t	i;
+
+	if (!s || !n)
+		return (ft_strdup(""));
+	ndup = (char *)ft_calloc(n + 1, sizeof(char));
+	if (!ndup)
+		return (NULL);
+	i = 0;
+	while (s[i] && i < n)
+	{
+		ndup[i] = s[i];
+		i++;
+	}
+	ndup[i] = '\0';
+	return (ndup);
+}
+
 char	*ft_strjoin(const char *s1, const char *s2)
 {
 	size_t	i;
-	size_t	len1;
-	size_t	len2;
+	size_t	j;
 	char	*join;
 
-	if (!s1 || !s2)
+	if (!s1 && !s2)
 		return (NULL);
-	len1 = ft_strlen(s1);
-	len2 = ft_strlen(s2);
-	join = (char *)malloc((len1 + len2 + 1) * sizeof(char));
+	j = 0;
+	while (s1[j])
+		j++;
+	i = 0;
+	while (s2[i])
+		i++;
+	join = (char *)ft_calloc((i + j + 1), sizeof(char));
 	if (!join)
 		return (NULL);
-	i = 0;
-	while (s1[i])
-	{
+	i = -1;
+	while (s1[++i])
 		join[i] = s1[i];
-		i++;
-	}
-	while (s2[i - len1])
-	{
-		join[i] = s2[i - len1];
-		i++;
-	}
-	join[i] = '\0';
+	j = -1;
+	while (s2[++j])
+		join[i + j] = s2[j];
+	join[i + j + 1] = '\0';
 	return (join);
 }
 
-size_t	ft_strlen(const char *str)
+void	*ft_calloc(size_t nmemb, size_t size)
 {
-	size_t	len;
+	void	*array;
+	size_t	i;
 
-	len = 0;
-	while (str[len])
-		len++;
-	return (len);
+	array = (void *)malloc(nmemb * size);
+	if (!array)
+		return (NULL);
+	i = -1;
+	while (++i < nmemb * size)
+		((unsigned char *)array)[i] = '\0';
+	return (array);
 }
