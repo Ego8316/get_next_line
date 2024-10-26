@@ -6,11 +6,11 @@
 /*   By: ego <ego@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 21:50:37 by ego               #+#    #+#             */
-/*   Updated: 2024/10/26 19:18:34 by ego              ###   ########.fr       */
+/*   Updated: 2024/10/26 17:41:49 by ego              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line_bonus.h"
+#include "get_next_line.h"
 
 int	ft_char_in_str(char c, char *s)
 {

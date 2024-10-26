@@ -6,12 +6,14 @@
 #    By: ego <ego@student.42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/21 21:47:23 by ego               #+#    #+#              #
-#    Updated: 2024/10/25 16:24:36 by ego              ###   ########.fr        #
+#    Updated: 2024/10/26 19:18:20 by ego              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRCS	=	get_next_line.c			\
 			get_next_line_utils.c
+BSRCS	=	get_next_line_bonus.c		\
+			get_next_line_utils_bonus.c
 OBJS	=	$(SRCS:.c=.o)
 IDIR	=	.
 
@@ -27,6 +29,11 @@ all		:	$(NAME)
 $(NAME)	:	header
 			echo "Compiling get_next_line..."
 			$(CC) $(CLFAGS) -D BUFFER_SIZE=$(BSIZE) main.c $(SRCS) -I $(IDIR) -o $(NAME)
+			echo "$(GREEN)[OK] get_next_line is ready!$(RESET)"
+
+bonus	:	header
+			echo "Compiling get_next_line..."
+			$(CC) $(CLFAGS) -D BUFFER_SIZE=$(BSIZE) main.c $(BSRCS) -I $(IDIR) -o $(NAME)
 			echo "$(GREEN)[OK] get_next_line is ready!$(RESET)"
 
 norm	:
