@@ -29,7 +29,7 @@ Line-by-line file reader that handles arbitrary buffer sizes, EOF detection, and
 
 ---
 
-## 🚀 Installation
+## 🛠️ Building
 ```bash
 git clone https://github.com/Ego8316/get_next_line.git
 cd get_next_line
@@ -41,7 +41,7 @@ cc -Wall -Wextra -Werror -D BUFFER_SIZE=42 get_next_line_bonus.c get_next_line_u
 
 ---
 
-## 🧰 Usage
+## 🚀 Usage
 ```c
 #include "get_next_line.h"
 
