@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hcavet <hcavet@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ego <ego@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 21:49:07 by ego               #+#    #+#             */
-/*   Updated: 2024/11/01 13:47:59 by hcavet           ###   ########.fr       */
+/*   Updated: 2025/11/30 18:18:00 by ego              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,9 @@
 
 char	*get_next_line(int fd);
 
-// Utils
-int		ft_char_in_str(char c, char *s);
-char	*ft_strdup(const char *s);
-char	*ft_strndup(const char *s, size_t n);
-char	*ft_strjoin(const char *s1, const char *s2);
-void	*ft_calloc(size_t nmemb, size_t size);
+int		ft_char_in_str(char c, const char *s);
+void	*ft_memset(void *b, int c, size_t len);
+void	*ft_memmove(void *dst, const void *src, size_t len);
+size_t	ft_strlen_null(const char *s);
 
 #endif
