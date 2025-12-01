@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/ayogun/42-project-badges/main/badges/get_next_linem.png" height="150" alt="42 get_next_line Badge"/>
+  <img src="https://github.com/Ego8316/Ego8316/blob/main/42-badges/get_next_line.png" height="150" alt="42 get_next_line Badge"/>
 </p>
 
 <p align="center">
